@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const cron = require('node-cron');
@@ -20,6 +21,8 @@ app.use(express.json({ limit: '100kb' }));
 
 app.use('/api', pushRoutes);
 app.use('/api/admin', adminRoutes);
+
+app.use('/admin', express.static(path.join(__dirname, 'public')));
 
 app.get('/health', (_req, res) => {
     res.json({ ok: true, subscribers: store.count(), uptime: process.uptime() });
