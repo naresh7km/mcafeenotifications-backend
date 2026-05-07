@@ -1,0 +1,21 @@
+{
+  "name": "push-notification-backend",
+  "version": "1.0.0",
+  "description": "Push notification backend for the antivirus demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "generate-vapid": "node scripts/generateVapid.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "node-cron": "^3.0.3",
+    "web-push": "^3.6.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
